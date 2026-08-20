@@ -74,6 +74,10 @@ export default function Page() {
           <Monster />
         </Badge>
       </p>
+      <p className="flex gap-2 items-center text-neutral-100 tracking-tight">
+        <span className="text-green-400">•</span> Available for new
+        opportunities
+      </p>
     </main>
   );
 }
