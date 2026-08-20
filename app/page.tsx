@@ -38,7 +38,7 @@ export default async function Page() {
   );
 
   return (
-    <main className="w-full max-w-2xl grid gap-4 p-4 pt-32">
+    <main className="w-full max-w-2xl grid gap-4 p-4 pt-36">
       <div className="flex gap-2 items-center">
         <Image
           src={"/pfp.jpg"}

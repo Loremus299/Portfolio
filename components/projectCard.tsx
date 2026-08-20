@@ -24,7 +24,9 @@ export default function ProjectCard({
           />
         </div>
         <div className="p-3">
-          <p className="text-neutral-100 text-sm">{name}</p>
+          <p className="text-neutral-100 text-sm">
+            {name.replaceAll("-", " ")}
+          </p>
           <p className="text-sm">{description}</p>
         </div>
       </div>
