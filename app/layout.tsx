@@ -7,9 +7,27 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const embed = "/embed.png";
+
 export const metadata: Metadata = {
   title: "Nidhish | Fullstack Developer",
   description: "A 21 year old Fullstack NextJS Developer.",
+  openGraph: {
+    images: [
+      {
+        url: embed,
+        secureUrl: embed,
+      },
+    ],
+  },
+  twitter: {
+    images: [
+      {
+        url: embed,
+        secureUrl: embed,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
