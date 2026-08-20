@@ -3,3 +3,13 @@
 body {
   font-family: var(--font-geist-sans);
 }
+
+* {
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
+}
