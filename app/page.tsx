@@ -126,7 +126,7 @@ export default async function Page() {
         />
       </div>
       <p className="text-neutral-100 font-semibold mt-8">Projects</p>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 portrait:grid-cols-1 gap-4">
         {projectArr.map((project) => (
           <ProjectCard
             key={project.name}
