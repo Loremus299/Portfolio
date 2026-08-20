@@ -9,7 +9,7 @@ import Monster from "@/components/icons/monster";
 import { Nextjs } from "@/components/icons/next";
 import { PostgreSQL } from "@/components/icons/postgres";
 import { Gmail } from "@/components/icons/proton";
-import { AmazonWebServices } from "@/components/icons/s3";
+import S3 from "@/components/icons/s3";
 import { Shadcnui } from "@/components/icons/shadcn";
 import { TailwindCSS } from "@/components/icons/tailwind";
 import { TanStack } from "@/components/icons/tanstack";
@@ -76,7 +76,7 @@ export default async function Page() {
           <DrizzleORM className="size-4" />
         </Badge>{" "}
         <Badge name="S3" target="https://orm.drizzle.team/">
-          <AmazonWebServices className="size-4" />
+          <S3 />
         </Badge>{" "}
         <Badge name="Docker" target="https://www.docker.com/">
           <Docker className="size-4" />
