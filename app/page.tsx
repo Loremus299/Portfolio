@@ -115,7 +115,7 @@ export default async function Page() {
         </BigBadge>
       </div>
       <p className="text-neutral-100 font-semibold">Projects</p>
-      <div>
+      <div className="grid grid-cols-2 gap-4">
         {projectArr.map((project) => (
           <ProjectCard
             key={project.name}

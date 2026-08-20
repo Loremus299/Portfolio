@@ -308,7 +308,7 @@ const TanStack = (props: SVGProps<SVGSVGElement>) => (
         cx="308.5"
         cy="720.5"
         stroke="#6DA300"
-        stroke-opacity=".502"
+        strokeOpacity=".502"
         strokeWidth="26"
         mask="url(#tanstack__c)"
         rx="253"

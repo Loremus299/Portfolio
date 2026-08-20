@@ -1,1 +1,6 @@
-export const projects = ["Better-Together", "MyMaps", "Myflix", "Mydo"];
+export const projects = [
+  "Better-Together",
+  "Astronomy-Template",
+  "MyMaps",
+  "Myflix",
+];
