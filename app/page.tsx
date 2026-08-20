@@ -16,6 +16,7 @@ import { TanStack } from "@/components/icons/tanstack";
 import Image from "next/image";
 import { projects } from "./data";
 import ProjectCard from "@/components/projectCard";
+import Work from "@/components/work";
 
 type Project = {
   name: string;
@@ -116,23 +117,13 @@ export default async function Page() {
       </div>
       <p className="text-neutral-100 font-semibold">Past work</p>
       <div>
-        <div className="grid gap-2">
-          <div>
-            <p className="tracking-tight text-neutral-100">Syndesic</p>
-            <div className="flex justify-between">
-              <p className="tracking-tight text-sm">
-                <a target="_blank" href="https://ideanomic.com/">
-                  Ideanomic
-                </a>
-              </p>
-              <p className="tracking-tight text-sm">April 2026 - May 2026</p>
-            </div>
-          </div>
-          <p>
-            an internal tool to streamline project management, invoice handling
-            and time tracking for clients and employees.
-          </p>
-        </div>
+        <Work
+          company="Ideanomic"
+          website="https://ideanomic.com/"
+          project="Syndesic"
+          date="April 2026 - May 2026"
+          description="an internal tool to streamline project management, invoice handling and time tracking for clients and employees."
+        />
       </div>
       <p className="text-neutral-100 font-semibold">Projects</p>
       <div className="grid grid-cols-2 gap-4">
