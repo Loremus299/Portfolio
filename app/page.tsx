@@ -1,17 +1,42 @@
 import Badge from "@/components/badge";
+import BigBadge from "@/components/bigBadge";
 import { Docker } from "@/components/icons/docker";
 import { DrizzleORM } from "@/components/icons/drizzle";
 import { Figma } from "@/components/icons/figma";
+import { Git } from "@/components/icons/git";
+import { GitHub } from "@/components/icons/github";
 import Monster from "@/components/icons/monster";
 import { Nextjs } from "@/components/icons/next";
 import { PostgreSQL } from "@/components/icons/postgres";
+import { Gmail } from "@/components/icons/proton";
 import { AmazonWebServices } from "@/components/icons/s3";
 import { Shadcnui } from "@/components/icons/shadcn";
 import { TailwindCSS } from "@/components/icons/tailwind";
 import { TanStack } from "@/components/icons/tanstack";
 import Image from "next/image";
+import { projects } from "./data";
+import ProjectCard from "@/components/projectCard";
 
-export default function Page() {
+type Project = {
+  name: string;
+  description: string;
+  website: string;
+  avatar_url: string;
+};
+export default async function Page() {
+  const projectArr: Project[] = await Promise.all(
+    projects.map(async (projectName) => {
+      const response = await fetch(
+        `https://git.loremus.gay/api/v1/repos/Loremus/${projectName}`,
+        {
+          cache: "force-cache",
+        },
+      );
+
+      return response.json();
+    }),
+  );
+
   return (
     <main className="w-full max-w-2xl grid gap-4 p-4 pt-32">
       <div className="flex gap-2 items-center">
@@ -78,6 +103,29 @@ export default function Page() {
         <span className="text-green-400">•</span> Available for new
         opportunities
       </p>
+      <div className="flex gap-2">
+        <BigBadge target="mailto:nidhish.dha@gmail.com">
+          <Gmail className="size-5" />
+        </BigBadge>
+        <BigBadge target="https://github.com/Loremus299">
+          <GitHub className="size-5" />
+        </BigBadge>
+        <BigBadge target="https://git.loremus.gay/Loremus">
+          <Git className="size-5" />
+        </BigBadge>
+      </div>
+      <p className="text-neutral-100 font-semibold">Projects</p>
+      <div>
+        {projectArr.map((project) => (
+          <ProjectCard
+            key={project.name}
+            name={project.name}
+            avatar_url={project.avatar_url}
+            description={project.description}
+            website={project.website}
+          />
+        ))}
+      </div>
     </main>
   );
 }
