@@ -115,7 +115,7 @@ export default async function Page() {
           <Git className="size-5" />
         </BigBadge>
       </div>
-      <p className="text-neutral-100 font-semibold">Past work</p>
+      <p className="text-neutral-100 font-semibold mt-8">Past work</p>
       <div>
         <Work
           company="Ideanomic"
@@ -125,7 +125,7 @@ export default async function Page() {
           description="an internal tool to streamline project management, invoice handling and time tracking for clients and employees."
         />
       </div>
-      <p className="text-neutral-100 font-semibold">Projects</p>
+      <p className="text-neutral-100 font-semibold mt-8">Projects</p>
       <div className="grid grid-cols-2 gap-4">
         {projectArr.map((project) => (
           <ProjectCard
