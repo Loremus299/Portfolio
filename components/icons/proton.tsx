@@ -1,4 +1,6 @@
-const Gmail = (props) => (
+import { ComponentProps } from "react";
+
+const Gmail = (props: ComponentProps<"svg">) => (
   <svg {...props} viewBox="0 49.4 512 399.42">
     <g fill="none" fillRule="evenodd">
       <g fillRule="nonzero">
