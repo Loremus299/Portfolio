@@ -29,7 +29,7 @@ export default async function Page() {
       const response = await fetch(
         `https://git.loremus.gay/api/v1/repos/Loremus/${projectName}`,
         {
-          cache: "force-cache",
+          cache: "no-cache",
         },
       );
 

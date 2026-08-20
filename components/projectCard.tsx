@@ -12,8 +12,8 @@ export default function ProjectCard({
   avatar_url: string;
 }) {
   return (
-    <a target="_blank" href={website}>
-      <div className="w-full bg-neutral-900 rounded-xl">
+    <div className="w-full bg-neutral-900 rounded-xl">
+      <a target="_blank" href={website}>
         <div className="h-36 border-b border-white/5 grid place-items-center rounded-t-xl">
           <Image
             src={avatar_url}
@@ -29,7 +29,7 @@ export default function ProjectCard({
           </p>
           <p className="text-sm">{description}</p>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   );
 }
