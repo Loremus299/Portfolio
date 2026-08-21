@@ -17,6 +17,7 @@ import Image from "next/image";
 import { projects } from "./data";
 import ProjectCard from "@/components/projectCard";
 import Work from "@/components/work";
+import Star from "@/components/icons/star";
 
 type Project = {
   name: string;
@@ -136,6 +137,15 @@ export default async function Page() {
             website={project.website}
           />
         ))}
+      </div>
+      <div className="border-b w-full opacity-25 mt-4" />
+      <div className="relative">
+        <a
+          className="absolute left-8 -top-7 pl-2 pr-2 bg-neutral-950"
+          href="/blahaj"
+        >
+          <Star />
+        </a>
       </div>
     </main>
   );
