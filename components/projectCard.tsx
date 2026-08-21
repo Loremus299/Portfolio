@@ -23,7 +23,7 @@ export default function ProjectCard({
             className="size-12"
           />
         </div>
-        <div className="p-3">
+        <div className="p-3 grid gap-1">
           <p className="text-neutral-100 text-sm">
             {name.replaceAll("-", " ")}
           </p>
