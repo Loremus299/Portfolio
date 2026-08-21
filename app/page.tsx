@@ -18,6 +18,7 @@ import { projects } from "./data";
 import ProjectCard from "@/components/projectCard";
 import Work from "@/components/work";
 import Star from "@/components/icons/star";
+import Link from "next/link";
 
 type Project = {
   name: string;
@@ -138,13 +139,20 @@ export default async function Page() {
           />
         ))}
       </div>
+      <p className="text-neutral-100 font-semibold mt-8">Writings</p>
+      <Link href="/result-enum-alike-in-ts" target="_blank">
+        <p className="text-neutral-100">Result Enum alike in Typescript.</p>
+        <p className="text-sm">
+          Recreating my favourite Rust feature in Typescript for error handling.
+        </p>
+      </Link>
       <div className="border-b w-full opacity-25 mt-4" />
       <div className="relative">
         <a
-          className="absolute left-8 -top-7 pl-2 pr-2 bg-neutral-950"
+          className="absolute left-8 -top-8 pl-2 pr-2 bg-neutral-950 flex gap-2"
           href="/blahaj"
         >
-          <Star />
+          <Star /> Secret
         </a>
       </div>
     </main>

@@ -12,7 +12,7 @@ export default function ProjectCard({
   avatar_url: string;
 }) {
   return (
-    <div className="w-full bg-neutral-900 rounded-xl">
+    <div className="w-full bg-neutral-900 rounded-xl hover:brightness-125 transition duration-300">
       <a target="_blank" href={website}>
         <div className="h-36 border-b border-white/5 grid place-items-center rounded-t-xl">
           <Image
