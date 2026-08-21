@@ -60,9 +60,10 @@ export default function Page() {
             trycatch blocks into Result where error is unknown. (as JS errors
             are untyped by default)
           </p>
-          <Codeblock lang="typescript">{`const data: Result<Response, unknown> = await Result.tryCatch({}, async() => {
-  return await fetch('https://www.loremus.gay')
-})`}</Codeblock>
+          <Codeblock lang="typescript">{`const data: Result<Response, unknown> = await Result.tryCatch(
+  {}, 
+  async() => await fetch('https://www.loremus.gay')
+)`}</Codeblock>
           <p>is equivalent to</p>
           <Codeblock lang="typescript">{`async function query(): Promise<Result<Response, unknown>> {
   try {

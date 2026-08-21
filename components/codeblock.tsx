@@ -9,7 +9,7 @@ export default async function Codeblock({
 }) {
   const html = await codeToHtml(children, {
     lang,
-    theme: "github-dark",
+    theme: "dark-plus",
   });
   return (
     <div className="overflow-x-scroll rounded-md border border-white/10 bg-neutral-900">
