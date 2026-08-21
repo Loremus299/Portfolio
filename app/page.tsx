@@ -108,11 +108,11 @@ export default async function Page() {
         <BigBadge target="mailto:nidhish.dha@gmail.com">
           <Gmail className="size-5" />
         </BigBadge>
+        <BigBadge target="https://git.loremus.gay/Loremus?tab=activity">
+          <Git className="size-5" />
+        </BigBadge>
         <BigBadge target="https://github.com/Loremus299">
           <GitHub className="size-5" />
-        </BigBadge>
-        <BigBadge target="https://git.loremus.gay/Loremus">
-          <Git className="size-5" />
         </BigBadge>
       </div>
       <p className="text-neutral-100 font-semibold mt-8">Past work</p>
