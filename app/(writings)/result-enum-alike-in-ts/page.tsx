@@ -18,9 +18,8 @@ export default function Page() {
         </h2>
         <p>
           I implemented Result as a type to allow for type narrowing, using it
-          in class to define methods on it and methods to convert between them.
-          Type narrowing was crucial to avoid accessing error or data without
-          confirming success.
+          in class to define methods on it. Type narrowing was crucial to avoid
+          accessing error or data without confirming success.
         </p>
       </div>
       <div className="grid gap-2">
@@ -35,8 +34,8 @@ export default function Page() {
             The result value either being data or error depending on the value
             of success allows typescript to enforce that success value must be
             checked before accessing data or error, preventing direct and
-            dangerous access. You can directly wrap this type in a class by just
-            creating a class and define methods to use it in your code.
+            dangerous access. You can directly wrap this type in a class and
+            define methods to use it in your code.
           </p>
           <Codeblock lang="typescript">{`export class Result<T, E> { 
   public readonly value: ResultType<T, E>; 
@@ -44,7 +43,7 @@ export default function Page() {
 }`}</Codeblock>
           <p>
             Then I just started defining methods on this class to create
-            functionality I similar to Result Enum in Rust.
+            functionality similar to Result Enum in Rust.
           </p>
         </div>
       </div>
@@ -76,10 +75,10 @@ export default function Page() {
 
 const data = await query();`}</Codeblock>
           <p>
-            <b>Fallback</b> is a method takes in a set of functions that return
-            take in same arguments and return same type of Result. It runs one
-            method after another in an array and returns the first one that
-            succeeds, if all fails, it returns default error.
+            <b>Fallback</b> is a method that takes in functions with same
+            arguments and return result. It runs one method after another in the
+            array and returns the first one that succeeds, if all fails, it
+            returns default error.
           </p>
           <Codeblock lang="typescript">{`const data: Result<UserData, string> = Result.fallback(
   {id: "userId"}, 
@@ -99,8 +98,8 @@ const data = await query();`}</Codeblock>
           <p>
             4 of the non static methods are match, mapOk. mapError all of which
             take a result and map data or error to given function. Along with a
-            utility type to convert it to type from class to avoid issues with
-            NextJS Server Actions.
+            utility called type to convert it to type from class to avoid issues
+            with NextJS Server Actions.
           </p>
         </div>
       </div>
