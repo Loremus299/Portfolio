@@ -14,7 +14,7 @@ export default function ProjectCard({
   return (
     <div className="w-full bg-neutral-900 rounded-xl hover:brightness-125 transition duration-300">
       <a target="_blank" href={website}>
-        <div className="h-36 border-b border-white/5 grid place-items-center rounded-t-xl">
+        <div className="h-32 border-b border-white/5 grid place-items-center rounded-t-xl">
           <Image
             src={avatar_url}
             alt={name}

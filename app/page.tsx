@@ -18,6 +18,7 @@ import ProjectCard from "@/components/projectCard";
 import Work from "@/components/work";
 import Star from "@/components/icons/star";
 import Link from "next/link";
+import Calendar from "./calendar";
 
 export default function Page() {
   return (
@@ -82,6 +83,7 @@ export default function Page() {
           <Monster />
         </Badge>
       </p>
+      <Calendar />
       <p className="flex gap-2 items-center text-neutral-100 tracking-tight">
         <span className="text-green-400">•</span> Available for new
         opportunities
@@ -115,6 +117,20 @@ export default function Page() {
             website={project.website}
           />
         ))}
+        <div className="grid gap-2">
+          <Link
+            href={"https://archive.mymaps.loremus.gay/"}
+            className="text-neutral-400 underline underline-offset-2"
+          >
+            1. My Maps
+          </Link>
+          <Link
+            href={"https://archive.mydo.loremus.gay/"}
+            className="text-neutral-400 underline underline-offset-2"
+          >
+            2. Mydo
+          </Link>
+        </div>
       </div>
       <p className="text-neutral-100 font-semibold mt-8">Writings</p>
       <Link href="/result-enum-alike-in-ts" target="_blank">
