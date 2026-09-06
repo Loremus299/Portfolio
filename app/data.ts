@@ -29,6 +29,6 @@ export const projects: Project[] = [
     name: "Myflix",
     description: "Your personal movie tracker.",
     avatar_url: "/projects/flix.png",
-    website: "https://archive.astronomy.loremus.gay/",
+    website: "https://archive.myflix.loremus.gay/",
   },
 ];
