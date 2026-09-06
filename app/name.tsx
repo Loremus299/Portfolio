@@ -1,19 +1,22 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
-export default function Name() {
-  const origin = window.origin;
+import { useEffect, useState } from "react";
 
-  if (origin.includes("loremus.gay") || origin.includes("localhost:3000")) {
-    return (
-      <h1 className="text-md font-bold tracking-tight text-neutral-100">
-        Nidhi.
-      </h1>
-    );
-  }
+export default function Name() {
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    if (window.origin.includes("loremus.gay")) {
+      setName("Nidhi");
+    } else {
+      setName("Nidhish Dharmadhikari");
+    }
+  }, []);
 
   return (
     <h1 className="text-md font-bold tracking-tight text-neutral-100">
-      Nidhish Dharmadhikari.
+      {name}
     </h1>
   );
 }

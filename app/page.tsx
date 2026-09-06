@@ -18,6 +18,7 @@ import ProjectCard from "@/components/projectCard";
 import Work from "@/components/work";
 import Star from "@/components/icons/star";
 import Link from "next/link";
+import Name from "./name";
 
 export default function Page() {
   return (
@@ -31,9 +32,7 @@ export default function Page() {
           className="size-12 rounded-md"
         />
         <div className="leading-6">
-          <h1 className="text-md font-bold tracking-tight text-neutral-100">
-            Nidhi.
-          </h1>
+          <Name />
           <p className="text-neutral-500 text-xs">@Loremus</p>
         </div>
       </div>
