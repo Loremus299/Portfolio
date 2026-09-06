@@ -120,7 +120,7 @@ export default function Page() {
       <Link href="/result-enum-alike-in-ts" target="_blank">
         <p className="text-neutral-100">Result Enum alike in Typescript.</p>
         <p className="text-sm">
-          Recreating my favourite Rust feature in Typescript for error handling.
+          Because life is too short to try catch every async function.
         </p>
       </Link>
       <div className="border-b w-full opacity-25 mt-4" />

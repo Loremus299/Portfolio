@@ -12,7 +12,7 @@ export default async function Codeblock({
     theme: "dark-plus",
   });
   return (
-    <div className="overflow-x-scroll rounded-md border border-white/10 bg-neutral-900">
+    <div className="overflow-x-scroll rounded-md border border-white/10 bg-[#1e1e1e]">
       <div
         className="[&_pre]:m-0 [&_pre]:p-2 [&_pre]:pt-1 [&_pre]:pb-1 [&_pre]:text-sm"
         dangerouslySetInnerHTML={{ __html: html }}

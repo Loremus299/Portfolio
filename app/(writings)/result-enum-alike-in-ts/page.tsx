@@ -1,4 +1,5 @@
 import Codeblock from "@/components/codeblock";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -9,24 +10,47 @@ export default function Page() {
           Result Enum alike in Typescript.
         </h1>
         <p className="text-sm">
-          Recreating my favourite Rust feature in Typescript for error handling.
+          Because life is too short to try catch every async function.
+        </p>
+      </div>
+      <div className="mt-4 grid gap-2">
+        <h2 className="text-neutral-100 tracking-tight text-xl">Why ?</h2>
+        <p>
+          I got the idea to implement this from the{" "}
+          <Link
+            href={"https://doc.rust-lang.org/std/result/enum.Result.html"}
+            target="_blank"
+            className="underline"
+          >
+            Result Enum from Rust.
+          </Link>{" "}
+          It allows you properly handle side effects of your code. Typescript
+          has a habit of doing using try/catch but it is heavily associated with
+          &quot;async functions&quot; and not managing side effects.
         </p>
       </div>
       <div className="mt-4 grid gap-2">
         <h2 className="text-neutral-100 tracking-tight text-xl">
-          Implementation details
+          Implementation Details.
         </h2>
         <p>
-          I implemented Result as a type to allow for type narrowing, using it
-          in class to define methods on it. Type narrowing was crucial to avoid
-          accessing error or data without confirming success.
+          Typescript doesn&apos;t work the same way as Rust (unfortunately) so I
+          couldn&apos;t make Result here as an Enum or an Interface, I had to
+          utilize classes and type system. <br /> <br />I implemented Result as
+          a type to allow for type narrowing, using it in class to define
+          methods on it. Type narrowing was crucial to avoid accessing error or
+          data without confirming success.
         </p>
       </div>
       <div className="grid gap-2">
         <h2 className="text-neutral-100 tracking-tight text-xl">
-          Type Narrowing & ResultType
+          Type Narrowing & ResultType.
         </h2>
         <div className="grid gap-2">
+          <p>
+            Type Narrowing is a method to refine the type of data from a broader
+            one to a specific one.
+          </p>
           <Codeblock lang="typescript">{`export type ResultType<T, E> = |
   | { success: true; data: T } 
   | { success: false; error: E };`}</Codeblock>
@@ -41,24 +65,17 @@ export default function Page() {
   public readonly value: ResultType<T, E>; 
   ..... 
 }`}</Codeblock>
-          <p>
-            Then I just started defining methods on this class to create
-            functionality similar to Result Enum in Rust.
-          </p>
         </div>
       </div>
       <div className="mt-4 grid gap-2">
-        <h2 className="text-neutral-100 tracking-tight text-xl">Methods</h2>
+        <h2 className="text-neutral-100 tracking-tight text-xl">
+          Important Static Methods.
+        </h2>
         <div className="grid gap-2">
-          <p>So far I have made 9 methods 5 of which are static methods</p>
           <p>
-            2 of the methods, ok and error just construct basic result class
-            with values provided.
-          </p>
-          <p>
-            <b>TryCatch</b> is an essential method. Allowing you to convert
-            trycatch blocks into Result where error is unknown. (as JS errors
-            are untyped by default)
+            <b>1. TryCatch</b> <br /> Since Javascript allows you to throw
+            anything and catch block types it as unknown. Result.tryCatch wraps
+            a try those async calls into a clean {`Result<T, unknown>`} type.
           </p>
           <Codeblock lang="typescript">{`const data: Result<Response, unknown> = await Result.tryCatch(
   {}, 
@@ -76,10 +93,10 @@ export default function Page() {
 
 const data = await query();`}</Codeblock>
           <p>
-            <b>Fallback</b> is a method that takes in functions with same
-            arguments and return result. It runs one method after another in the
-            array and returns the first one that succeeds, if all fails, it
-            returns default error.
+            <b>2. Fallback</b> <br /> is a method that takes in functions with
+            same arguments and return result. It runs one method after another
+            in the array and returns the first one that succeeds, if all fails,
+            it returns default error.
           </p>
           <Codeblock lang="typescript">{`const data: Result<UserData, string> = Result.fallback(
   {id: "userId"}, 
@@ -87,20 +104,45 @@ const data = await query();`}</Codeblock>
   [fetchFromCache, fetchFromDb1, fetchFromDb2]
 )`}</Codeblock>
           <p>
-            <b>Settle</b> is a method that takes in a an array of Promised
-            Results, awaits them and makes sure they are all successful, and
-            returns the successful data as a tuple. If even one of them fails,
-            it returns null.
+            <b>3. Settle</b> <br />
+            is a method that takes in a an array of Promised Results, awaits
+            them and makes sure they are all successful, and returns the
+            successful data as a tuple. If even one of them fails, it returns
+            null.
           </p>
           <Codeblock lang="typescript">{`const data: Result<[string, number], null> = Result.settle([
   returnsStringResultPromise(), 
   returnsNumberResultPromise()
 ])`}</Codeblock>
+        </div>
+        <div className="mt-4 grid gap-2">
+          <h2 className="text-neutral-100 tracking-tight text-xl">
+            Method Chaining.
+          </h2>
           <p>
-            4 of the non static methods are match, mapOk. mapError all of which
-            take a result and map data or error to given function. Along with a
-            utility called type to convert it to type from class to avoid issues
-            with NextJS Server Actions.
+            1. mapOk() = Transform data if Result is successful.
+            <br />
+            2. mapError() = Transforms the error message if it failed.
+            <br />
+            3. match() = Takes in 2 function, one runs if failed, another runs
+            if succeeded. Both transform results. <br />
+            4. onOk() = Runs the function if result is successful but
+            doesn&apos;t transform the result. <br />
+            5. onError() = Runs the function on error but doesn&apos;t change
+            the result.
+            <br />
+          </p>
+        </div>
+        <div className="mt-4 grid gap-2">
+          <h2 className="text-neutral-100 tracking-tight text-xl">
+            We live in a society.
+          </h2>
+          <p>
+            If you are working with Result and sending data from Next JS Server
+            Actions to ur frontend. Next will give you an error that you
+            can&apos;t use classes. To convert the {`Result<T, E>`} class back
+            into the type, you should use the method &quot;type()&quot; and it
+            will work.
           </p>
         </div>
       </div>
