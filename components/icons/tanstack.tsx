@@ -322,7 +322,7 @@ const TanStack = (props: SVGProps<SVGSVGElement>) => (
             cy="113.5"
             r="106"
             stroke="#FFC900"
-            stroke-opacity=".529"
+            strokeOpacity=".529"
             strokeWidth="15"
           />
           <path

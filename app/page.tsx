@@ -3,7 +3,6 @@ import BigBadge from "@/components/bigBadge";
 import { Docker } from "@/components/icons/docker";
 import { DrizzleORM } from "@/components/icons/drizzle";
 import { Figma } from "@/components/icons/figma";
-import { Git } from "@/components/icons/git";
 import { GitHub } from "@/components/icons/github";
 import Monster from "@/components/icons/monster";
 import { Nextjs } from "@/components/icons/next";
@@ -20,26 +19,7 @@ import Work from "@/components/work";
 import Star from "@/components/icons/star";
 import Link from "next/link";
 
-type Project = {
-  name: string;
-  description: string;
-  website: string;
-  avatar_url: string;
-};
 export default async function Page() {
-  const projectArr: Project[] = await Promise.all(
-    projects.map(async (projectName) => {
-      const response = await fetch(
-        `https://git.loremus.gay/api/v1/repos/Loremus/${projectName}`,
-        {
-          cache: "force-cache",
-        },
-      );
-
-      return response.json();
-    }),
-  );
-
   return (
     <main className="w-full max-w-2xl grid gap-4 p-4 pt-36">
       <div className="flex gap-2 items-center">
@@ -52,7 +32,7 @@ export default async function Page() {
         />
         <div className="leading-6">
           <h1 className="text-md font-bold tracking-tight text-neutral-100">
-            Nidhish Dharmadhikari
+            Nidhi.
           </h1>
           <p className="text-neutral-500 text-xs">@Loremus</p>
         </div>
@@ -110,9 +90,6 @@ export default async function Page() {
         <BigBadge target="mailto:nidhish.dha@gmail.com">
           <Gmail className="size-5" />
         </BigBadge>
-        <BigBadge target="https://git.loremus.gay/Loremus?tab=activity">
-          <Git className="size-5" />
-        </BigBadge>
         <BigBadge target="https://github.com/Loremus299">
           <GitHub className="size-5" />
         </BigBadge>
@@ -129,7 +106,7 @@ export default async function Page() {
       </div>
       <p className="text-neutral-100 font-semibold mt-8">Projects</p>
       <div className="grid grid-cols-2 portrait:grid-cols-1 gap-4">
-        {projectArr.map((project) => (
+        {projects.map((project) => (
           <ProjectCard
             key={project.name}
             name={project.name}
