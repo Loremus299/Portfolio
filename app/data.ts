@@ -13,16 +13,16 @@ export const projects: Project[] = [
     website: "https://better-together.loremus.gay",
   },
   {
+    name: "Badcn",
+    description: "Reusable components made using Shadcn Base UI.",
+    avatar_url: "/projects/badcn.svg",
+    website: "https://cn.loremus.gay/",
+  },
+  {
     name: "Astronomy Template",
     description:
       "Animated astrophysics focused portfolio & blogging template with a CMS.",
     avatar_url: "/projects/astrophysics.ico",
-    website: "https://archive.astronomy.loremus.gay/",
-  },
-  {
-    name: "My Maps",
-    description: "Locally managed mindmapping app.",
-    avatar_url: "/projects/maps.png",
     website: "https://archive.astronomy.loremus.gay/",
   },
   {
