@@ -18,7 +18,6 @@ import ProjectCard from "@/components/projectCard";
 import Work from "@/components/work";
 import Star from "@/components/icons/star";
 import Link from "next/link";
-import Calendar from "./calendar";
 
 export default function Page() {
   return (
@@ -83,7 +82,6 @@ export default function Page() {
           <Monster />
         </Badge>
       </p>
-      <Calendar />
       <p className="flex gap-2 items-center text-neutral-100 tracking-tight">
         <span className="text-green-400">•</span> Available for new
         opportunities
