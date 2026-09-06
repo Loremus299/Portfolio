@@ -19,7 +19,7 @@ import Work from "@/components/work";
 import Star from "@/components/icons/star";
 import Link from "next/link";
 
-export default async function Page() {
+export default function Page() {
   return (
     <main className="w-full max-w-2xl grid gap-4 p-4 pt-36">
       <div className="flex gap-2 items-center">
