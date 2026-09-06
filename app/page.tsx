@@ -38,7 +38,7 @@ export default function Page() {
       </div>
 
       <p>
-        I&apos;m Nidhish, a 21 year old{" "}
+        21 year old{" "}
         <span className="font-semibold text-neutral-100">
           Fullstack NextJS developer{" "}
         </span>
