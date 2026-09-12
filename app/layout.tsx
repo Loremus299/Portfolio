@@ -7,7 +7,7 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const embed = "/embed.png";
+const embed = "/embed.jpg";
 
 export const metadata: Metadata = {
   title: "Nidhi...",
