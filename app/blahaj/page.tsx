@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 const images = [
+  "Suited up Haj",
+  "I use Debian btw",
   "Wassup lady",
   "Don't talk to me until I've had coffee",
   "Time to chill",
