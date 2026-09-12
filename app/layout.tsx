@@ -10,7 +10,7 @@ const geistSans = Geist({
 const embed = "/embed.png";
 
 export const metadata: Metadata = {
-  title: "Nidhish | Fullstack Developer",
+  title: "Nidhi...",
   description: "A 21 year old Fullstack NextJS Developer.",
   openGraph: {
     images: [
